@@ -1,0 +1,76 @@
+Notebook Name,Status,Notebook Path,Cell Number,Line in Cell,Message ID,Type,Symbol,Description
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,,,C1102,convention,incorrect-notebook-name,"Notebook name does not follow the required format: nb_(3 digit sub-domain code)_(functional description), all snake-case."
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,23,9,C1101,convention,comment-too-long,Comment line exceeds 72 characters.
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,32,3,C1101,convention,comment-too-long,Comment line exceeds 72 characters.
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,32,5,C1101,convention,comment-too-long,Comment line exceeds 72 characters.
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,33,3,C1101,convention,comment-too-long,Comment line exceeds 72 characters.
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,23,10,C0301,convention,line-too-long,Line too long (94/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,23,15,C0301,convention,line-too-long,Line too long (99/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,15,C0301,convention,line-too-long,Line too long (80/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,19,C0301,convention,line-too-long,Line too long (88/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,25,C0301,convention,line-too-long,Line too long (110/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,38,C0301,convention,line-too-long,Line too long (91/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,27,3,C0301,convention,line-too-long,Line too long (195/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,1,C0301,convention,line-too-long,Line too long (136/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,3,C0301,convention,line-too-long,Line too long (111/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,31,3,C0301,convention,line-too-long,Line too long (108/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,32,5,C0301,convention,line-too-long,Line too long (106/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,33,3,C0301,convention,line-too-long,Line too long (104/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,2,C0301,convention,line-too-long,Line too long (81/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,3,C0301,convention,line-too-long,Line too long (148/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,46,1,C0301,convention,line-too-long,Line too long (101/79)
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,39,12,W1401,warning,anomalous-backslash-in-string,Anomalous backslash in string: '\p'. String constant might be missing an r prefix.
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,39,12,W1401,warning,anomalous-backslash-in-string,Anomalous backslash in string: '\p'. String constant might be missing an r prefix.
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,12,1,C0114,convention,missing-module-docstring,Missing module docstring
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,23,7,W0401,warning,wildcard-import,Wildcard import common.common_utils
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,23,12,W0401,warning,wildcard-import,Wildcard import common.common_utils
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,23,15,W0707,warning,raise-missing-from,"Consider explicitly re-raising using 'except ImportError as exc' and 'raise ImportError(""Could not import 'common.common_utils' from any of the provided paths."") from exc'"
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,1,C0413,convention,wrong-import-position,"Import ""from pyspark.sql.functions import col, lit, when"" should be placed at the top of the module"
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,2,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,4,E0602,error,undefined-variable,Undefined variable 'gp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,4,E0602,error,undefined-variable,Undefined variable 'pgaero_sch'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,7,E0602,error,undefined-variable,Undefined variable 'gp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,7,E0602,error,undefined-variable,Undefined variable 'pgaero_sch'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,10,E0602,error,undefined-variable,Undefined variable 'gp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,10,E0602,error,undefined-variable,Undefined variable 'pgaero_sch'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,15,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,15,E0602,error,undefined-variable,Undefined variable 'vgp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,15,E0602,error,undefined-variable,Undefined variable 'sot_aro'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,17,C1008,convention,join-explicit-how,"Use explicit ""how"" parameter in joins"
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,38,E0602,error,undefined-variable,Undefined variable 'vgp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,24,38,E0602,error,undefined-variable,Undefined variable 'sot_aro'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,27,1,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,27,2,W0104,warning,pointless-statement,Statement seems to have no effect
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,27,3,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,27,3,W1309,warning,f-string-without-interpolation,Using an f-string that does not have any interpolated variables
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,27,6,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,1,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,1,E0602,error,undefined-variable,Undefined variable 'vgp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,1,E0602,error,undefined-variable,Undefined variable 'sot_btp'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,1,E0602,error,undefined-variable,Undefined variable 'v_tgt_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,1,E0602,error,undefined-variable,Undefined variable 'v_source_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,3,E0602,error,undefined-variable,Undefined variable 'fed_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,3,E0602,error,undefined-variable,Undefined variable 'v_sot_schema'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,3,E0602,error,undefined-variable,Undefined variable 'v_tgt_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,3,E0602,error,undefined-variable,Undefined variable 'v_source_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,28,5,E0602,error,undefined-variable,Undefined variable 'display'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,31,3,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,31,3,E0602,error,undefined-variable,Undefined variable 'vgp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,31,3,E0602,error,undefined-variable,Undefined variable 'sot_btp'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,31,3,E0602,error,undefined-variable,Undefined variable 'v_tgt_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,31,3,E0602,error,undefined-variable,Undefined variable 'v_source_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,2,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,2,E0602,error,undefined-variable,Undefined variable 'vgp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,2,E0602,error,undefined-variable,Undefined variable 'sot_btp'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,2,E0602,error,undefined-variable,Undefined variable 'v_tgt_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,2,E0602,error,undefined-variable,Undefined variable 'v_source_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,3,E0602,error,undefined-variable,Undefined variable 'v_source_id'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,3,E0602,error,undefined-variable,Undefined variable 'vgp_catalog'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,3,E0602,error,undefined-variable,Undefined variable 'sot_btp'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,34,3,E0602,error,undefined-variable,Undefined variable 'v_tgt_name'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,38,1,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,39,1,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,40,1,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,40,2,W1309,warning,f-string-without-interpolation,Using an f-string that does not have any interpolated variables
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,46,1,E0602,error,undefined-variable,Undefined variable 'spark'
+Data Validation,Non-Compliant,/Workspace/Shared/GasPower/Abhishek Pal/BTP/Data Validation,46,1,W1309,warning,f-string-without-interpolation,Using an f-string that does not have any interpolated variables

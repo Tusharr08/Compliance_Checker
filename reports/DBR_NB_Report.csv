@@ -1,0 +1,12 @@
+Notebook Name,Notebook Path,Status,Message ID,Line Number,Type,Description
+Untitled Notebook 2024-12-10 16:22:22,/Users/kanhaiya.singhania@ge.com/Untitled Notebook 2024-12-10 16:22:22,Non-Compliant,C0304,1,convention,Final newline missing
+Sample_Notebook,/Users/tushar.gupta1@ge.com/Notebooks/Sample_Notebook,Non-Compliant,C0304,10,convention,Final newline missing
+Hive Metastore,/Users/tushar.gupta1@ge.com/Notebooks/Hive Metastore,Non-Compliant,E0001,1,error,"Parsing failed: 'invalid syntax (Compliance_Checker.temp_file, line 1)'"
+nb_plm_sfdc_deal_dashboard_sot,/Users/rohit.dubey1@ge.com/nb_plm_sfdc_deal_dashboard_sot,Non-Compliant,E0001,893,error,"Parsing failed: 'invalid syntax (Compliance_Checker.temp_file, line 893)'"
+Ingestion_testing,/Users/brajendra.gouda@ge.com/Ingestion_testing,Error,,,error,list index out of range
+testing_backtick_automation,/Users/bhanuprasad.avula@ge.com/testing_backtick_automation,Non-Compliant,E0001,19,error,"Parsing failed: 'unterminated string literal (detected at line 19) (Compliance_Checker.temp_file, line 19)'"
+Backtick Automate Code,/Users/bhanuprasad.avula@ge.com/Backtick Automate Code,Non-Compliant,C1002,2,convention,Comment line exceeds 72 characters.
+GEV_GET_DATA Data,/Users/Pankaj4.Gupta@ge.com/GEV_GET_DATA Data,Error,,,error,list index out of range
+GEV_GET_DATA,/Users/Pankaj4.Gupta@ge.com/GEV_GET_DATA,Non-Compliant,C0301,25,convention,Line too long (124/79)
+nb_eng_tarot_cmpd_plm_route_task_demand_view,/Users/srinidhi.cn@ge.com/nb_eng_tarot_cmpd_plm_route_task_demand_view,Non-Compliant,C0301,271,convention,Line too long (89/79)
+SQL Queries_Testing,/Users/sandhya.n@ge.com/SQL Queries_Testing,Non-Compliant,C0304,1,convention,Final newline missing

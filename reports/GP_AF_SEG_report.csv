@@ -1,0 +1,59 @@
+Repository,YAML File,YAML File Path,Status,Violations
+GP_AF_SEG,seg_J_se_ae_dnc_capacity_hrs_emp_data_load.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_J_se_ae_dnc_capacity_hrs_emp_data_load.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_J_se_ae_dnc_capacity_hrs_emp_data_load.yml"", line 25, column 15"
+GP_AF_SEG,seg_J_se_ae_dnc_prev_capacity_hrs_data_load.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_J_se_ae_dnc_prev_capacity_hrs_data_load.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_J_se_ae_dnc_prev_capacity_hrs_data_load.yml"", line 25, column 15"
+GP_AF_SEG,seg_J_se_ae_dnc_std_hrs_ingestion_to_sot_load.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_J_se_ae_dnc_std_hrs_ingestion_to_sot_load.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_J_se_ae_dnc_std_hrs_ingestion_to_sot_load.yml"", line 24, column 15"
+GP_AF_SEG,seg_sales_text_to_sot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_sales_text_to_sot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_sales_text_to_sot.yml"", line 25, column 15"
+GP_AF_SEG,seg_seg_ae_dnc_capacity_hrs.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_ae_dnc_capacity_hrs.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_ae_dnc_capacity_hrs.yml"", line 18, column 15"
+GP_AF_SEG,seg_seg_ae_dnc_standardd_hrs.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_ae_dnc_standardd_hrs.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_ae_dnc_standardd_hrs.yml"", line 17, column 15"
+GP_AF_SEG,seg_seg_D_and_C_smartsheet_to_Greenplum_EDL_SMARTSHEET_TO_GP_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_D_and_C_smartsheet_to_Greenplum_EDL_SMARTSHEET_TO_GP_EDL2.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_SEG_EDL_base_outgestion_seg_Dnc_Capacity_Hrs_Greenplum_to_Smartsheet_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SEG_EDL_base_outgestion_seg_Dnc_Capacity_Hrs_Greenplum_to_Smartsheet_EDL2.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_EDL_BOX_Oppty_mappings_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_EDL_BOX_Oppty_mappings_EDL2.yml,Compliant,
+GP_AF_SEG,seg_SEG_EDL_BOX_TO_GP__ing_se_steam_org_role_dist_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SEG_EDL_BOX_TO_GP__ing_se_steam_org_role_dist_EDL2.yml,Compliant,
+GP_AF_SEG,seg_SEG_EDL_Ingestion_seg_D_and_C_Capacity_Hrs_smartsheet_to_Greenplum_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SEG_EDL_Ingestion_seg_D_and_C_Capacity_Hrs_smartsheet_to_Greenplum_EDL2.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_SEG_EDL_Outgestion__L1_Application_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SEG_EDL_Outgestion__L1_Application_EDL2.yml,Compliant,
+GP_AF_SEG,seg_SEG_EDL_Outgestion__out_se_Osa_Active_Plans_GP2Box_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SEG_EDL_Outgestion__out_se_Osa_Active_Plans_GP2Box_EDL2.yml,Compliant,
+GP_AF_SEG,seg_seg_hvr2talend_ing_pnpgrolp5150_techstack_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_hvr2talend_ing_pnpgrolp5150_techstack_EDL2.yml,Compliant,
+GP_AF_SEG,seg_SEG_J_seg_effort_ratio_ing_box_to_GP_EDL.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SEG_J_seg_effort_ratio_ing_box_to_GP_EDL.yml,Compliant,
+GP_AF_SEG,seg_seg_WIPT_to_PowerNow_Outbound_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_seg_WIPT_to_PowerNow_Outbound_EDL2.yml,Compliant,
+GP_AF_SEG,seg_se_jb_contractor_quest_actual_hrs.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_se_jb_contractor_quest_actual_hrs.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_se_jb_contractor_quest_actual_hrs.yml"", line 26, column 15"
+GP_AF_SEG,seg_se_jb_ingestion_to_sot_load.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_se_jb_ingestion_to_sot_load.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_se_jb_ingestion_to_sot_load.yml"", line 26, column 15"
+GP_AF_SEG,seg_SE_JB_monthly_actuals_calculation_monthly_Run_CTO.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SE_JB_monthly_actuals_calculation_monthly_Run_CTO.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SE_JB_monthly_actuals_calculation_monthly_Run_CTO.yml"", line 22, column 15"
+GP_AF_SEG,seg_SE_JB_monthly_actuals_calculation_Weekly_Run_CTO.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SE_JB_monthly_actuals_calculation_Weekly_Run_CTO.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_SE_JB_monthly_actuals_calculation_Weekly_Run_CTO.yml"", line 22, column 15"
+GP_AF_SEG,seg_se_jb_seg_wave_initiative_milestone_sot_load.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_se_jb_seg_wave_initiative_milestone_sot_load.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_se_jb_seg_wave_initiative_milestone_sot_load.yml"", line 26, column 15"
+GP_AF_SEG,seg_tac_eng_adhoc_tasking_ing_to_sot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_adhoc_tasking_ing_to_sot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_adhoc_tasking_ing_to_sot.yml"", line 27, column 15"
+GP_AF_SEG,seg_tac_eng_tarot_demand_attributes_mapping_ref_ing_to_sot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_tarot_demand_attributes_mapping_ref_ing_to_sot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_tarot_demand_attributes_mapping_ref_ing_to_sot.yml"", line 26, column 15"
+GP_AF_SEG,seg_tac_eng_tarot_rca_by_rbs_tier_1_mapping_ing_to_sot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_tarot_rca_by_rbs_tier_1_mapping_ing_to_sot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_tarot_rca_by_rbs_tier_1_mapping_ing_to_sot.yml"", line 26, column 15"
+GP_AF_SEG,seg_tac_eng_tarot_rca_by_status_mapping_ing_to_sot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_tarot_rca_by_status_mapping_ing_to_sot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_eng_tarot_rca_by_status_mapping_ing_to_sot.yml"", line 26, column 15"
+GP_AF_SEG,seg_tac_ncn_query_csot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_ncn_query_csot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_ncn_query_csot.yml"", line 24, column 15"
+GP_AF_SEG,seg_tac_project_progress_csot.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_project_progress_csot.yml,Error,"could not determine a constructor for the tag 'tag:yaml.org,2002:python/tuple'
+  in ""cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_project_progress_csot.yml"", line 24, column 15"
+GP_AF_SEG,seg_tac_seg_ing_gp2datanow_er_knowledge_articles_EDL2.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_seg_ing_gp2datanow_er_knowledge_articles_EDL2.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_tac_seg_Powernow_Rca.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\seg_tac_seg_Powernow_Rca.yml,Compliant,
+GP_AF_SEG,seg_seg_hvr2talend_ing_pnpgrolp5150_psc_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR\seg_seg_hvr2talend_ing_pnpgrolp5150_psc_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_hvr2talend_ing_pnpgrolp5150_techstack_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR\seg_seg_hvr2talend_ing_pnpgrolp5150_techstack_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_Box2_GP_Cost_Dashboard_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_Box2_GP_Cost_Dashboard_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_Box2_GP_Cost_Dashboard_Mli_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_Box2_GP_Cost_Dashboard_Mli_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_D_and_C_smartsheet_to_Greenplum_EDL_SMARTSHEET_TO_GP_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_D_and_C_smartsheet_to_Greenplum_EDL_SMARTSHEET_TO_GP_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_EDL_BOX_Oppty_mappings_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_EDL_BOX_Oppty_mappings_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_EDL_BOX_TO_GP__ing_se_steam_org_role_dist_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_EDL_BOX_TO_GP__ing_se_steam_org_role_dist_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_EDL_Ingestion_seg_D_and_C_Capacity_Hrs_smartsheet_to_Greenplum_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_EDL_Ingestion_seg_D_and_C_Capacity_Hrs_smartsheet_to_Greenplum_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_EDL_Ingestion_unassigned_orders_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_EDL_Ingestion_unassigned_orders_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_ing_seg_box2gp_perf_mgnt_backlog_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_ing_seg_box2gp_perf_mgnt_backlog_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_ing_seg_unassign_box2gp_EDL2_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_ing_seg_unassign_box2gp_EDL2_DBR.yml,Non-Compliant,No interval scheduled for this job
+GP_AF_SEG,seg_seg_J_seg_effort_ratio_ing_box_to_GP_EDL_DBR.yml,cloned_repos\GP_AF_SEG\dags\talend_exit\SEG\workflows\EDL_DBR_Phase3\seg_seg_J_seg_effort_ratio_ing_box_to_GP_EDL_DBR.yml,Non-Compliant,No interval scheduled for this job

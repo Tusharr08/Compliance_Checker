@@ -1,0 +1,2 @@
+[pylint.checkers]
+notebook_coding_standards = parsers.custom_checker:CustomNBCodingStandards
