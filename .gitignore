@@ -1,0 +1,12 @@
+cloned_repos
+config
+venv
+notebooks
+sampl.py
+sample_file.py
+sample2.py
+sample3.py
+reports
+.pytest_cache
+__pycache__
+.env

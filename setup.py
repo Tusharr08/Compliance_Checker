@@ -6,8 +6,8 @@ setup(
     packages=find_packages(),
     entry_points={
         'pylint.checkers': [
-            'notebook_coding_standards = parsers.custom_checker:CustomNBCodingStandards',
-            'notebook_coding_standards = parsers.custom_checker:CustomLineChecker',
+            'notebook_coding_standards = parsers.custom_rules:CustomNBCodingStandards',
+            'notebook_coding_standards = parsers.custom_rules:CustomLineChecker',
         ],
     }
 )

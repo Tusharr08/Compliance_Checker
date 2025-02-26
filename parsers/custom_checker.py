@@ -1,12 +1,12 @@
 """
-    Contains custom checks with corresponding codes, applied on Notebooks.
+Contains custom checks with corresponding codes, applied on Notebooks.
 """
 from pylint.checkers import BaseChecker, BaseRawFileChecker
 from pylint.lint import PyLinter
 import astroid
 
 class CustomNBCodingStandards(BaseChecker):
-    """Contains custom Pyspark checks to apply on Notebooks.
+    """Contains custom PySpark checks to apply on Notebooks.
 
     Args:
         BaseChecker (Class): Pylint Class for applying checks.
@@ -19,90 +19,75 @@ class CustomNBCodingStandards(BaseChecker):
             "Prefer implicit column selection using F.col() or direct column names.",
             "pyspark-column-selection",
             "Use F.col('colA') instead of df.colA"
-            ),
+        ),
         "C1002": (
             "Refactor complex logical operations for better readability.",
             "pyspark-logical-refactor",
             "Avoid overly complex logical operations inside filter() or when()."
-            ),
+        ),
         "C1003": (
-            "Use select at the start or end of a transformation for schema consistency.", 
-            "pyspark-schema-contract", 
+            "Use select at the start or end of a transformation for schema consistency.",
+            "pyspark-schema-contract",
             "Always use a select statement to prepare the dataframe for the next step."
-            ),
+        ),
         "C1004": (
-            "Use 'aliases' instead of withColumnRenamed().", 
-            "pyspark-rename-aliases", 
-            "Use alias()  instead of withColumnRenamed()."
-            ),
+            "Use 'aliases' instead of withColumnRenamed().",
+            "pyspark-rename-aliases",
+            "Use alias() instead of withColumnRenamed()."
+        ),
         "C1005": (
-            "Use cast() within select()  instead of withColumn().", 
-            "pyspark-cast-select", 
-            "Use  cast() within select() like df.select(F.col('').cast('')) instead of  withColumn()."
-            ),
+            "Use cast() within select() instead of withColumn().",
+            "pyspark-cast-select",
+            "Use cast() within select() like df.select(F.col('').cast('')) instead of withColumn()."
+        ),
         "C1006": (
-            "Use F.lit(None) instead of empty strings for empty columns.", 
-            "pyspark-lit-none", 
+            "Use F.lit(None) instead of empty strings for empty columns.",
+            "pyspark-lit-none",
             "Always use F.lit(None) to maintain semantic correctness."
-            ),
-        # "C1007": (
-        #     'Hardcode value found "%s"  Use configuration files or environment variables instead.',
-        #     'hardcoded-value',
-        #     'Avoid hardcoding values like file paths or credentials directly in the code.'
-        # )
-        'C1008': (
-            'Use explicit "how" parameter in joins',
-            'join-explicit-how',
-            'Ensure that the "how" parameter is explicitly specified in joins.'
         ),
-        'C1009': (
-            'Avoid right joins',
-            'avoid-right-joins',
-            'Avoid using right joins; use left joins instead.'
+        "C1007": (
+            "Hardcode value found. Use configuration files or environment variables instead.",
+            "hardcoded-value",
+            "Avoid hardcoding values like file paths or credentials directly in the code."
         ),
-        'C1010': (
-            'Avoid using .dropDuplicates() or .distinct() as a crutch',
-            'avoid-dropduplicates-distinct',
-            'Avoid using .dropDuplicates() or .distinct() to mask underlying issues with duplicate rows.'
+        "C1008": (
+            "Use explicit how parameter in joins.",
+            "join-explicit-how",
+            "Ensure that the how parameter is explicitly specified in joins."
         ),
-        'C1011': (
-            'Enable ignorenulls flag for analytic functions',
-            'enable-ignorenulls',
-            'Enable the ignorenulls flag for analytic functions to handle null values properly.'
+        "C1009": (
+            "Avoid right joins.",
+            "avoid-right-joins",
+            "Avoid using right joins; use left joins instead."
         ),
-        'C1012': (
-            'Avoid using empty partitionBy(), harms performance',
-            'avoid-empty-partitionby',
-            'Avoid using empty partitionBy() as it forces Spark to combine all data into a single partition.'
+        "C1010": (
+            "Avoid using .dropDuplicates() or .distinct() as a crutch.",
+            "avoid-dropduplicates-distinct",
+            "Avoid using .dropDuplicates() or .distinct() to mask underlying issues with duplicate rows."
         ),
-        'C1013': (
-            'Specify an explicit frame for window functions',
-            'specify-explicit-frame',
-            'Always specify an explicit frame when using window functions to avoid unpredictable behavior.'
+        "C1011": (
+            "Enable ignorenulls flag for analytic functions.",
+            "enable-ignorenulls",
+            "Enable the ignorenulls flag for analytic functions to handle null values properly."
         ),
-        # 'C1014': (
-        #     'Module names should be short, lower-case words separated with underscores',
-        #     'module-naming-convention',
-        #     'Ensure that module names are short, lower-case words separated with underscores.'
-        # ),
-        # 'C1015': (
-        #     'Package names should be short, lower-case words without underscores',
-        #     'package-naming-convention',
-        #     'Ensure that package names are short, lower-case words without underscores.'
-        # ),
+        "C1012": (
+            "Avoid using empty partitionBy(), harms performance.",
+            "avoid-empty-partitionby",
+            "Avoid using empty partitionBy() as it forces Spark to combine all data into a single partition."
+        ),
+        "C1013": (
+            "Specify an explicit frame for window functions.",
+            "specify-explicit-frame",
+            "Always specify an explicit frame when using window functions to avoid unpredictable behavior."
+        ),
     }
 
     options = {}
 
-    # def visit_assign(self, node):
-    #     # Check if the assigned value is a hardcoded string
-    #     if isinstance(node.value, astroid.Const) and isinstance(node.value.value, str):
-    #         self.add_message('hardcoded-value', node=node, args=(node.value.value,))
-
-    # def visit_classdef(self, node):
-    #     """Checks if class name has underscores."""
-    #     if '_' in node.name:
-    #         self.add_message('class-name-no-underscore', node=node)
+    def visit_assign(self, node):
+        # Rule 7: Check if the assigned value is a hardcoded string
+        if isinstance(node.value, astroid.Const) and isinstance(node.value.value, str):
+            self.add_message('C1007', node=node)
 
     # def visit_module(self, node):
     #     """Check if module name is in small-case or not"""
@@ -238,9 +223,9 @@ class CustomLineChecker(BaseRawFileChecker):
     name = 'custom-line-checker'
     msgs={
         'C1101':(
-            'Comment line exceeds 72 characters.',
-            'comment-too-long',
-            'Line comment length is fixed to 72 characters only.'
+            "Comment line exceeds 72 characters.",
+            "comment-too-long",
+            "Line comment length is fixed to 72 characters only."
         ),
     }
     def process_module(self, node):

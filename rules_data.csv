@@ -1,0 +1,95 @@
+,rule_id,persona,guide_control,description,environment,rule_classification,query,last_refresh_date,last_refresh_by_sso,edl_is_deleted,edl_last_updated_date
+0,1,Developer,Coding standards,"""Prefer implicit column selection using F.col() or direct column names."",
+            ""pyspark-column-selection"",
+            ""Use F.col('colA') instead of df.colA""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == ""select"":
+    for arg in node.args:
+        if isinstance(arg, astroid.Call) and isinstance(arg.func, astroid.Attribute):
+            if any(isinstance(sub_arg, astroid.Attribute) for sub_arg in arg.args):
+                self.add_message('C1001', node=node)
+        elif isinstance(arg, astroid.Attribute):
+            self.add_message('C1001', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+1,1,Developer,Coding standards,"""Refactor complex logical operations for better readability."",
+            ""pyspark-logical-refactor"",
+            ""Avoid overly complex logical operations inside filter() or when().""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname in [""filter"", ""when""]:
+    if len(node.args) > 0:
+        expr = node.args[0]
+        count = self.count_logical_operators(expr)
+        if count > 3:
+            self.add_message(""C1002"", node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+2,1,Developer,Coding standards,"""Use select at the start or end of a transformation for schema consistency."", 
+            ""pyspark-schema-contract"", 
+            ""Always use a select statement to prepare the dataframe for the next step.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == ""select"" and len(node.args) > 0:
+    self.add_message(""C1003"", node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+3,1,Developer,Coding standards,"""Use 'aliases' instead of withColumnRenamed()."", 
+            ""pyspark-rename-aliases"", 
+            ""Use alias()  instead of withColumnRenamed().""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == ""withColumnRenamed"":
+    self.add_message(""C1004"", node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+4,1,Developer,Coding standards,"""Use cast() within select()  instead of withColumn()."", 
+            ""pyspark-cast-select"", 
+            ""Use  cast() within select() like df.select(F.col('').cast('')) instead of  withColumn().""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == ""withColumn"":
+    if len(node.args) > 1:
+        col_expr = node.args[1]
+        if isinstance(col_expr, astroid.Call) and isinstance(col_expr.func, astroid.Attribute):
+            if col_expr.func.attrname == 'cast':
+                self.add_message(""C1005"", node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+5,1,Developer,Coding standards,"""Use F.lit(None) instead of empty strings for empty columns."", 
+            ""pyspark-lit-none"", 
+            ""Always use F.lit(None) to maintain semantic correctness.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == ""lit"" and len(node.args) > 0:
+    if isinstance(node.args[0], astroid.Const) and node.args[0].value == """":
+        self.add_message(""C1006"", node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+6,1,Developer,Coding standards,"""Hardcode value found. Use configuration files or environment variables instead."",
+            ""hardcoded-value"",
+            ""Avoid hardcoding values like file paths or credentials directly in the code.""",all,Non-Compliance,,2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+7,1,Developer,Coding standards,"""Use explicit how parameter in joins"",
+            ""join-explicit-how"",
+            ""Ensure that the how parameter is explicitly specified in joins.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == 'join':
+    if not any(keyword.arg == 'how' for keyword in node.keywords):
+        self.add_message('C1008', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+8,1,Developer,Coding standards,"""Avoid right joins"",
+            ""avoid-right-joins"",
+            ""Avoid using right joins; use left joins instead.""",all,Non-Compliance,"""""""
+for keyword in node.keywords:
+    if keyword.arg == 'how' and keyword.value.value == 'right':
+        self.add_message('C1009', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+9,1,Developer,Coding standards,"""Avoid using .dropDuplicates() or .distinct() as a crutch"",
+            ""avoid-dropduplicates-distinct"",
+            ""Avoid using .dropDuplicates() or .distinct() to mask underlying issues with duplicate rows.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == 'dropDuplicates':
+    self.add_message('C1010', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+10,1,Developer,Coding standards,"""Enable ignorenulls flag for analytic functions"",
+            ""enable-ignorenulls"",
+            ""Enable the ignorenulls flag for analytic functions to handle null values properly.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname in ['first', 'last']:
+    if not any(keyword.arg == 'ignorenulls' for keyword in node.keywords):
+        self.add_message('C1011', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+11,1,Developer,Coding standards,"""Avoid using empty partitionBy(), harms performance"",
+            ""avoid-empty-partitionby"",
+            ""Avoid using empty partitionBy() as it forces Spark to combine all data into a single partition.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == 'partitionBy':
+    if not node.args:
+        self.add_message('C1012', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z
+12,1,Developer,Coding standards,"""Specify an explicit frame for window functions"",
+            ""specify-explicit-frame"",
+            ""Always specify an explicit frame when using window functions to avoid unpredictable behavior.""",all,Non-Compliance,"""""""
+if isinstance(node.func, astroid.Attribute) and node.func.attrname == 'over':
+    if not any(keyword.arg in ['rowsBetween', 'rangeBetween'] for keyword in node.keywords):
+        self.add_message('C1013', node=node)
+        """"""",2025-02-24,03/01/25,0,2025-02-24T13:31:30.998Z

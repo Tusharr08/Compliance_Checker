@@ -7,6 +7,8 @@ spark = SparkSession.builder.appName("JoinCompliance").getOrCreate()
 flights = spark.read.csv("flights.csv")
 aircraft = spark.read.csv("aircraft.csv")
 
+fake_var = 'hard-coded'
+
 # Bad join
 flights = flights.join(aircraft, 'aircraft_id')
 

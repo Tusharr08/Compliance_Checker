@@ -66,7 +66,7 @@ def extract_code_cells(nb_json_content):
 
     return python_cells
 
-def lint_python_code(nb_path, code_cells):
+def lint_python_code(dbr_account, dbr_env, nb_path, code_cells):
     """Applies Pylint to the given code.
     
     Args:
@@ -77,21 +77,21 @@ def lint_python_code(nb_path, code_cells):
         list: List of key fields obtained after linting.
     """
     
-    result_data = []
-    nb_name_pattern = re.compile(r'^nb_[a-z]{3}_[a-z0-9_]+$')
+    #result_data = []
+    # nb_name_pattern = re.compile(r'^nb_[a-z]{3}_[a-z0-9_]+$')
     nb_name = nb_path.split("/")[-1]
-    if not nb_name_pattern.match(nb_name):
-        result_data.append({
-            "Notebook Name": nb_name,
-            "Status": "Non-Compliant",
-            "Notebook Path": nb_path,
-            "Cell Number": '',
-            "Line in Cell": '',
-            "Message ID": "C1102",
-            "Type": "convention",
-            "Symbol": "incorrect-notebook-name",
-            "Description": "Notebook name does not follow the required format: nb_(3 digit sub-domain code)_(functional description), all snake-case."
-        })
+    # if not nb_name_pattern.match(nb_name):
+    #     result_data.append({
+    #         "Notebook Name": nb_name,
+    #         "Status": "Non-Compliant",
+    #         "Notebook Path": nb_path,
+    #         "Cell Number": '',
+    #         "Line in Cell": '',
+    #         "Message ID": "C1102",
+    #         "Type": "convention",
+    #         "Symbol": "incorrect-notebook-name",
+    #         "Description": "Notebook name does not follow the required format: nb_(3 digit sub-domain code)_(functional description), all snake-case."
+    #     })
 
     temp_file_name = "temp.py"
     file_path = os.path.join(os.getcwd(), temp_file_name)
@@ -114,6 +114,9 @@ def lint_python_code(nb_path, code_cells):
             print('Compliant')
             lint_data = [
                 {
+                    "Workspace" : dbr_account,
+                    "Environment" : dbr_env,
+                    "Domain" :  nb_path.split("/")[3],
                     "Notebook Name": nb_name,
                     "Status": "Compliant",
                     "Notebook Path": nb_path,
@@ -136,6 +139,9 @@ def lint_python_code(nb_path, code_cells):
                         if block["start_line"] <= line_number <= block["end_line"]:
                             block_line_no = line_number - block["start_line"] + 1
                             lint_data.append({
+                                "Workspace" : dbr_account,
+                                "Environment" : dbr_env,
+                                "Domain" :  nb_path.split("/")[3],
                                 "Notebook Name": nb_name,
                                 "Status": "Non-Compliant",
                                 "Notebook Path": nb_path,
@@ -152,5 +158,5 @@ def lint_python_code(nb_path, code_cells):
     finally:
         os.remove(file_path)
     
-    result_data.extend(lint_data)
-    return result_data
+    #result_data.extend(lint_data)
+    return lint_data

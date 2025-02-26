@@ -68,7 +68,7 @@ def generate_yammlint_report(org):
                             "Type" : repo['visibility'],
                             "YAML File Name" : yaml_file.split("/")[-1],
                             "YAML File Path" : f"{org}/{repo_name}/{yaml_file}",
-                            "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/{yaml_file}",
+                            "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/blob/main/{yaml_file}",
                             "Status" : "Compliant",
                             "Line Number" : '',
                             "Level" : '',
@@ -82,7 +82,7 @@ def generate_yammlint_report(org):
                             "Type" : repo['visibility'],
                             "YAML File Name" : yaml_file.split("/")[-1],
                             "YAML File Path" : f"{org}/{repo_name}/{yaml_file}",
-                            "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/{yaml_file}",
+                            "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/blob/main/{yaml_file}",
                             "Line Number" : str(line["line"]),
                             "Level" : line['level'],
                             "Rule" : line['rule'],
@@ -101,7 +101,7 @@ def generate_yammlint_report(org):
     # print(f"Report for {org} saved in '{report_path}'.")
     return report_df
 
-def generate_dbr_nb_report(path):
+def generate_dbr_nb_report(dbr_account, dbr_host, dbr_token, path):
     """Generates csv report for the Databricks Notebook Code.
 
     Args:
@@ -110,26 +110,32 @@ def generate_dbr_nb_report(path):
     Returns:
         list: list of violations
     """
-
+    if 'dev' in dbr_account:
+        dbr_env = 'dev'
+    else:
+        dbr_env = 'prod'
     print(f"Now finding all Databricks Notebooks present in {path}..")
-    notebook_paths = find_notebooks(path)
+    notebook_paths = find_notebooks(dbr_host, dbr_token,  path)
     print(f"Total {len(notebook_paths)} notebooks detected!")
     dbr_report = []
     #status = 'Non-Compliant'
     for nb_path in notebook_paths:
         try:
-            file_content = fetch_file_from_workspace(nb_path)
+            file_content = fetch_file_from_workspace(dbr_host, dbr_token, nb_path)
             nb_json_content= json.loads(file_content)
             #print("Type of Content:",nb_json_content)
             code_cells = extract_code_cells(nb_json_content)
             #print(code_cells)
-            results = lint_python_code(nb_path, code_cells)
+            results = lint_python_code(dbr_account, dbr_env, nb_path, code_cells)
             for result in results:
                 dbr_report.append(result)
 
         except Exception as e:
             print(f"Error processing file {nb_path}: {e}")
             dbr_report.append({
+                    "Workspace" : dbr_account,
+                    "Environment" : dbr_env,
+                    "Domain" :  nb_path.split("/")[3],
                     "Notebook Name": nb_path.split("/")[-1],
                     "Status" : "Error",
                     "Notebook Path" : nb_path,
@@ -172,7 +178,7 @@ def generate_yaml_report_repowise(org, repo_name):
                         "Type" : repo['visibility'],
                         "YAML File Name" : yaml_file.split("/")[-1],
                         "YAML File Path" : f"{org}/{repo_name}/{yaml_file}",
-                        "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/{yaml_file}",
+                        "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/blob/main/{yaml_file}",
                         "Status" : "Compliant",
                         "Line Number" : '',
                         "Level" : '',
@@ -186,7 +192,7 @@ def generate_yaml_report_repowise(org, repo_name):
                         "Type" : repo['visibility'],
                         "YAML File Name" : yaml_file.split("/")[-1],
                         "YAML File Path" : f"{org}/{repo_name}/{yaml_file}",
-                        "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/{yaml_file}",
+                        "YAML File Link" : f"https://github.build.ge.com/{org}/{repo_name}/blob/main/{yaml_file}",
                         "Status" : "Non-Compliant",
                         "Line Number" : str(line["line"]),
                         "Level" : line['level'],

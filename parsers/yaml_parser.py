@@ -75,5 +75,5 @@ def lint_yaml_content(content):
             "rule" : error.rule,
             "description" : str(error)
         })
-    print('Lint_REsults: \n',lint_results)
+    #print('Lint_REsults: \n',lint_results)
     return lint_results

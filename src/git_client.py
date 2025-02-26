@@ -10,6 +10,7 @@ import base64
 import requests
 from dotenv import load_dotenv
 import urllib3
+import pandas as pd
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -18,30 +19,54 @@ load_dotenv(ENV_PATH)
 
 github_api_url= os.getenv("GITHUB_API_URL")
 org_name = os.getenv("ORG_NAME")
-token = os.getenv('NEW_TOKEN')
+token = os.getenv('GEV_SOX_TOKEN')
 my_account_name = os.getenv('MY_ACC_ID')
 
 headers ={
-    "Authorization": f'Bearer {token}'
+    "Authorization": f'Bearer {token}',
+    "Accept" : "application/json"
 }
 
 def list_repositories(org):
-    """Lists all the Public and Private repos under the given organization name.
+    """Lists all the public and private repositories under the given organization name.
 
     Args:
         org (str): Name of the organization
 
     Returns:
-        list: list of all repository details.
+        list: List of all repository details.
     """
-    print('Listing Repositories...')
+    print(f'Listing repositories in {org}...')
     url = f"{github_api_url}/orgs/{org}/repos"
-    try:
-        response = requests.get(url, headers=headers, verify=False, timeout=20)
-        #response.raise_for_status()
-    except Exception as e:
-        print(f"Error listing repositories: {e}")
-    return response.json()
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    repositories = []
+    page = 1
+
+    while True:
+        params = {'per_page': 100, 'page': page}
+        try:
+            response = requests.get(url, headers=headers, params=params, verify=False, timeout=20)
+            response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
+            
+            # Check if the response content type is JSON
+            if 'application/json' in response.headers.get('Content-Type', ''):
+                repos = response.json()
+                if not repos:
+                    break
+                repositories.extend(repos)
+                page += 1
+            else:
+                print("Unexpected content type:", response.headers.get('Content-Type'))
+                print(response.text)  # Print the response text for debugging
+                break
+        except requests.exceptions.RequestException as e:
+            print(f"Error listing repositories: {e}")
+            break
+
+    return repositories
 
 def list_af_internal_repositories(org):
     """List of all INTERNAL repos present under the given org name.
@@ -58,11 +83,18 @@ def list_af_internal_repositories(org):
     }
     url = f"{github_api_url}/orgs/{org}/repos"
     try:
-        response = requests.get(url, headers=headers, params=params, verify=False, timeout=20)
-        #response.raise_for_status()
-    except Exception as e:
-        print(f"Error fetching repositories: {e}")
-    return response.json()
+        response = requests.get(url, headers=headers, params=params , verify=False, timeout=20)
+        response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
+        
+        # Check if the response content type is JSON
+        if 'application/json' in response.headers.get('Content-Type', ''):
+            return response.json()
+        else:
+            print("Unexpected content type:", response.headers.get('Content-Type'))
+            return []
+    except requests.exceptions.RequestException as e:
+        print(f"Error listing repositories: {e}")
+        return []
 
 def get_repository(org, repo_name):
     """Lists all the Public and Private repos under the given organization name.
@@ -135,3 +167,10 @@ def fetch_file_content(org, repo, file):
     except Exception as e:
         print(f"Error fetching file {org}/{repo}/{file}: {e}")
         return None
+
+#print(pd.DataFrame(list_repositories(org_name)))
+
+# print(list_af_internal_repositories(org_name))
+# print(get_repository(org_name, 'gp_btp_repo'))
+# print(find_yml_files_in_repo(org_name, 'gp_btp_repo'))
+
